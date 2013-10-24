@@ -8,7 +8,9 @@ import (
 )
 
 var (
-	src = flag.String("src", "", "source file for replacement")
+	src        = flag.String("src", "", "source file for replacement")
+	recursive  = flag.Bool("r", false, "recursive flag for target directory")
+	targetFine = flag.Strng("f", "", "target file")
 )
 
 func main() {
