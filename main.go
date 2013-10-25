@@ -10,7 +10,8 @@ import (
 var (
 	src        = flag.String("src", "", "source file for replacement")
 	recursive  = flag.Bool("r", false, "recursive flag for target directory")
-	targetFine = flag.Strng("f", "", "target file")
+	targetFile = flag.Strng("f", "", "target file")
+	targetFile = flag.Strng("pagepath", "", "Static page path to generate or serve")
 )
 
 func main() {

@@ -1,1 +1,1 @@
-Overtuner is a replacer for content in html or any text.
+Gogi is a static site generator for GitHub Page.
