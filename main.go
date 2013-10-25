@@ -11,7 +11,9 @@ var (
 	src        = flag.String("src", "", "source file for replacement")
 	recursive  = flag.Bool("r", false, "recursive flag for target directory")
 	targetFile = flag.Strng("f", "", "target file")
-	targetFile = flag.Strng("pagepath", "", "Static page path to generate or serve")
+	pagePath   = flag.Strng("pagepath", "", "Static page path to generate or serve")
+	host       = flag.String("host", "127.0.0.1", "Host IP to listen")
+	port       = flag.String("port", "3999", "Listen port")
 )
 
 func main() {
