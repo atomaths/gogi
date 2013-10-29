@@ -1,1 +1,1 @@
-Gogi is a static site generator for GitHub Page.
+The tr is a template replacer for GitHub Pages or any static sites.
