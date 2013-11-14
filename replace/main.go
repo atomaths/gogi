@@ -1,23 +1,20 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"regexp"
 )
 
-var data = `
-<h3>test</h3>
-<!-- {{HEADER}} -->
-content
-<!-- {{/HEADER}} -->
-<h3>end</h3>
-`
-
-func replace(data []byte) []byte {
-	fmt.Println(data)
-	src, _ := ioutil.ReadFile("src.html")
+func replace(src []byte) []byte {
+	src, err := ioutil.ReadFile("replace.html")
+	if err != nil {
+		log.Print(err)
+		return []byte{}
+	}
+	if src[len(src)-1] == '\n' {
+		src = src[:len(src)-1]
+	}
 	return src
 }
 
@@ -28,9 +25,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	dst, _ := ioutil.ReadFile("dst.html")
+	src, _ := ioutil.ReadFile("index.html")
 
-	result := re.ReplaceAllFunc(dst, replace)
+	result := re.ReplaceAllFunc(src, replace)
 
 	ioutil.WriteFile("result.html", result, 0644)
 }
